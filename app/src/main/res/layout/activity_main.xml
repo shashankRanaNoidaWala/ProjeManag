@@ -29,21 +29,21 @@
         app:layout_constraintBottom_toTopOf="@id/btn_sign_up_intro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
-
-    <com.google.android.gms.common.SignInButton
+    <Button
         android:id="@+id/btn_sign_in_intro"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
+        android:text="Sign In"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_sign_up_intro"
-        android:background="@drawable/shape_button_rounded"
+        android:background="@drawable/shape_hoolow_button_rounded"
+        android:foreground="?attr/selectableItemBackground"
         />
-<!--    android:foreground="?attr/selectableItemBackground"-->
 
 
     <Button
@@ -55,9 +55,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv"
         android:background="@drawable/shape_button_rounded"
+        android:foreground="?attr/selectableItemBackground"
         />
-<!--        android:foreground="?attr/selectableItemBackground"-->
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
