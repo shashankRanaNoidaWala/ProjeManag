@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "823893323960",
+    "project_id": "projemanag-71cc2",
+    "storage_bucket": "projemanag-71cc2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823893323960:android:323f1af62365e47341444d",
+        "android_client_info": {
+          "package_name": "com.bottlerunner.projemanag"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "823893323960-qqodggj8t7m8r3borr2ttr8fgpofc935.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD22h83-Ey1XL7hSmHbeNtj7gr8SZN-0zU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "823893323960-qqodggj8t7m8r3borr2ttr8fgpofc935.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
