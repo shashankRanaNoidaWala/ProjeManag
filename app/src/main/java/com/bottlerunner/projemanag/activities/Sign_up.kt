@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.bottlerunner.projemanag.R
+import com.google.firebase.auth.FirebaseAuth
 import java.net.PasswordAuthentication
 
 class Sign_up : BaseActivity() {
@@ -36,6 +37,24 @@ class Sign_up : BaseActivity() {
 
         if(validateForm(name,email,password)){
             Toast.makeText(this,"Darling darling stand, stand by me, stand, stand by, stand by me, stand by me, stand by me",Toast.LENGTH_LONG).show()
+            showProgressDialog("Thamba thamba")
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password).addOnCompleteListener { task ->
+                hideProgressDialog()
+                if (task.isSuccessful) {
+                    val firebaseUser = task.result!!.user!!
+                    val registeredEmail = firebaseUser.email!!
+                    Toast.makeText(
+                        this,
+                        "$name you have successfully logged in",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    FirebaseAuth.getInstance().signOut()
+                    finish()
+                    showError("Cyka Blyat")
+                } else {
+                    Toast.makeText(this, task.exception?.message, Toast.LENGTH_SHORT).show()
+                }
+            }
         }
     }
 
