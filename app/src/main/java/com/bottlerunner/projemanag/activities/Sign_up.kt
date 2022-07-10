@@ -38,10 +38,10 @@ class Sign_up : BaseActivity() {
         if(validateForm(name,email,password)){
             Toast.makeText(this,"Darling darling stand, stand by me, stand, stand by, stand by me, stand by me, stand by me",Toast.LENGTH_LONG).show()
             showProgressDialog("Thamba thamba")
-            FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password).addOnCompleteListener { task ->
-                hideProgressDialog()
-                if (task.isSuccessful) {
-                    val firebaseUser = task.result!!.user!!
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password).addOnCompleteListener {      //This is lamda function
+                hideProgressDialog()                                                                                        //Know how to make it a regular one
+                if (it.isSuccessful) {
+                    val firebaseUser = it.result!!.user!!
                     val registeredEmail = firebaseUser.email!!
                     Toast.makeText(
                         this,
@@ -50,9 +50,8 @@ class Sign_up : BaseActivity() {
                     ).show()
                     FirebaseAuth.getInstance().signOut()
                     finish()
-                    showError("Cyka Blyat")
                 } else {
-                    Toast.makeText(this, task.exception?.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, it.exception?.message, Toast.LENGTH_SHORT).show()
                 }
             }
         }
