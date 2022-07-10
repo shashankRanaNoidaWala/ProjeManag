@@ -6,6 +6,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.bottlerunner.projemanag.R
+import com.bottlerunner.projemanag.firebase.FirestoreClass
+import com.bottlerunner.projemanag.models.User
 import com.google.firebase.auth.FirebaseAuth
 import java.net.PasswordAuthentication
 
@@ -43,6 +45,9 @@ class Sign_up : BaseActivity() {
                 if (it.isSuccessful) {
                     val firebaseUser = it.result!!.user!!
                     val registeredEmail = firebaseUser.email!!
+
+                    val user = User(firebaseUser.uid, name, registeredEmail)
+                    FirestoreClass().registerUser(this,user)
                     Toast.makeText(
                         this,
                         "$name you have successfully logged in",
@@ -71,5 +76,9 @@ class Sign_up : BaseActivity() {
             return false
         }
         return true
+    }
+
+    fun userRegisterSuccess() {
+        Toast.makeText(this,"You have successfully registered", Toast.LENGTH_SHORT).show()
     }
 }
