@@ -14,7 +14,7 @@ class FirestoreClass {
     private val firestore = FirebaseFirestore.getInstance()
 
     fun registerUser(activity: Sign_up, userInfo: com.bottlerunner.projemanag.models.User){
-        firestore.collection(Constants.Users).document(getCurrentUserId()).set(userInfo, SetOptions.merge()).addOnSuccessListener {
+        firestore.collection(Constants.USERS).document(getCurrentUserId()).set(userInfo, SetOptions.merge()).addOnSuccessListener {
             activity.userRegisterSuccess()
         }
     }

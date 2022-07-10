@@ -2,5 +2,5 @@ package com.bottlerunner.projemanag.utils
 
 object Constants {
 
-    var Users:String = "users"
+    const val USERS:String = "users"
 }
